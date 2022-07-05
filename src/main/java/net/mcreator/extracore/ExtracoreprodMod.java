@@ -14,6 +14,7 @@ package net.mcreator.extracore;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.mcreator.extracore.procedures.CmdextradiaProcedure;
 import net.mcreator.extracore.commands.Extradia;
 
 public class ExtracoreprodMod extends JavaPlugin {
@@ -22,6 +23,7 @@ public class ExtracoreprodMod extends JavaPlugin {
 		// Commands
 		this.getCommand("extradia").setExecutor(new Extradia());
 		// Procedures
+		getServer().getPluginManager().registerEvents(new CmdextradiaProcedure(), this);
 	}
 
 	@Override

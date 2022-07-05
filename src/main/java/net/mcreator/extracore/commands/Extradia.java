@@ -8,6 +8,12 @@ import org.bukkit.command.Command;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.World;
 
+import net.mcreator.extracore.procedures.CmdextradiaProcedure;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Arrays;
+
 public class Extradia implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -28,6 +34,18 @@ public class Extradia implements CommandExecutor {
 				y = ((BlockCommandSender) sender).getBlock().getLocation().getX();
 				z = ((BlockCommandSender) sender).getBlock().getLocation().getX();
 				world = ((BlockCommandSender) sender).getBlock().getWorld();
+			}
+			HashMap<String, String> cmdparams = new HashMap<>();
+			int[] index = {-1};
+			Arrays.stream(args).forEach(param -> {
+				if (index[0] >= 0)
+					cmdparams.put(Integer.toString(index[0]), param);
+				index[0]++;
+			});
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				CmdextradiaProcedure.executeProcedure($_dependencies);
 			}
 			return true;
 		}

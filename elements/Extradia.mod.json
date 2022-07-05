@@ -3,6 +3,9 @@
   "_type": "command",
   "definition": {
     "commandName": "extradia",
-    "permissionLevel": "No requirement"
+    "permissionLevel": "No requirement",
+    "onCommandExecuted": {
+      "name": "Cmdextradia"
+    }
   }
 }

@@ -1,8 +1,8 @@
 main: net.mcreator.extracore.ExtracoreprodMod
 name: Extracorev2
 version: 1.0.0
-authors: [antonin, MCreator]
-website: https://mcreator.net
+authors: [ExtraDev]
+website: https://extradia.fr
 api-version: 1.16
 
 commands:
