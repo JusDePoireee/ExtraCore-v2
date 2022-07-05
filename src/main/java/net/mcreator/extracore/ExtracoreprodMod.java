@@ -14,10 +14,13 @@ package net.mcreator.extracore;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import net.mcreator.extracore.commands.Extradia;
+
 public class ExtracoreprodMod extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		// Commands
+		this.getCommand("extradia").setExecutor(new Extradia());
 		// Procedures
 	}
 
